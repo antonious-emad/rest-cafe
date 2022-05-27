@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <style>
+
+:root {
+    --main-color: Gold;
+    --main-color-alt: Gold;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: black;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: auto;
+    padding: 0vw;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+.main-nav {
+    float: right;
+    display: inline;
+    z-index: 1;
+    font-size: 2rem;
+}
+
+.header {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    color: white;
+    right: 5%;
+    width: 100%;
+}
+
+.header .logo {
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    z-index: 7;
+}
+
+.header .main-nav {
+    display: flex;
+    color: #fafafa;
+    right: 10%;
+}
+
+.header .main-nav>li>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: white;
+    padding: 0 30px;
+    overflow: hidden;
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+
+.header .main-nav>li>a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+
+.header .main-nav>li>a:hover {
+    color: var(--main-color);
+    background-color: black;
+}
+
+.header .main-nav>li>a:hover::before {
+    left: 0;
+}
+
+footer {
+    position: relative;
+    float: right;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    z-index: 5;
+}
+
+footer i {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    padding: 16px;
+    float: right;
+    padding-right: 40px;
+    transition: color 1s, background-color 1s;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer p {
+    color: white;
+    padding-left: 50px;
+}
+
+footer a i:hover {
+    background-color: gold;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+form {
+    height: 100%;
+}
+
+.main {
+    padding: 40px;
+}
+
+.cont {
+    padding: 16px;
+    background-color:black;
+    width: 800px;
+    position: relative;
+    height: 100%;
+    z-index: 3;
+    top: 50px;
+    color:rgba(255, 115, 0, 0.792)
+}
+
+
+/* Full-width input fields */
+
+input[type=text],
+input[type=tel],
+input[type=password] {
+    width: 98%;
+    padding: 8px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: black;
+    color: rgba(255, 115, 0, 0.792);
+}
+
+input[type=text]:focus,
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: black;
+    outline: none;
+    color: rgba(255, 115, 0, 0.792);
+}
+
+.gender {
+    width: 98%;
+    padding: 8px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: black;
+    color: rgba(255, 115, 0, 0.792);
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+.registerbtn {
+    background-color: black;
+    color: rgba(255, 115, 0, 0.792);
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    font-size: 2.5rem;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+#message {
+    display: none;
+    background:black;
+    color: rgba(255, 115, 0, 0.792);
+    position: relative;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 20px;
+    border: 5px solid;
+    width: 72.5rem;
+    height: 50%;
+}
+
+@media (max-width:992px) {
+    #message {
+        display: none;
+        background: black;
+        color: rgba(255, 115, 0, 0.792);
+        position: relative;
+        padding: 20px;
+        margin-top: 10px;
+        border-radius: 20px;
+        border: 5px solid;
+        width: 738px;
+        height: 100%;
+    }
+}
+
+#message p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+
+/* Add a green text color and a checkmark when the requirements are right */
+
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+
+/* Add a red text color and an "x" when the requirements are wrong */
+
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+
+
+/* Add a blue text color to links */
+
+.terms {
+    color: rgba(255, 115, 0, 0.792);
+}
+
+
+/* media query */
+
+@media (min-width: 768px) {
+    .cont {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .cont {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cont {
+        width: 1170px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header .main-nav>li>a {
+        padding: 10px;
+        font-size: 14px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header .main-nav {
+        margin: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+    </style>
+            <link rel="icon" type="image/x-icon" href="hotcoffes.jpg">
+
+</head>
+
+<body>
+   
+    <div class="main">
+        <form action="/action_page.php"  onsubmit="window.location.href = 'coffe.html';">
+            <div class="cont" class="bor">
+                <h1>Register</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+
+                <label for="fname"><b>First Name</b></label>
+                <input type="text" placeholder="First Name" name="fname" id="fname" required>
+
+                <label for="lname"><b>Last Name</b></label>
+                <input type="text" placeholder="Last Name" name="lname" id="lname" required>
+
+                <label for="email "><b>Email</b></label>
+                <input type="text" placeholder="Enter Email " name="email " id="email " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+
+                <label for="phone"><b>Enter your phone number</b></label>
+                <input type="tel" placeholder="Enter phone number" name="phone" id="phone" pattern="[0-9]{11}" maxlength="11" minlength="11" required><br>
+
+                <label for="adress"><b>Adress</b></label>
+                <input type="text" placeholder="Enter Adress" name="adress" id="adress" required>
+
+                <label for="gender"><b>Gender</b></label><br><br>
+                <div class="gender">
+                    <input type="radio" name="gender" value="male" required>Male
+                    <input type="radio" name="gender" value="female" required>Female<br><br>
+                </div>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="passward" id="psw" name="psw" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number , start one uppercase , lowercase letter , special character such as(-_#&\*\.) ,  8 characters only and you Must not put spases"
+                    required>
+                <hr>
+                <p>By creating an account you agree to our <a href="# " class="terms">Terms & Privacy</a>.</p>
+
+                <button type="submit " class="registerbtn ">Register</button>
+            </div>
+        </form>
+        <div id="message">
+            <h3>Password must contain the following:</h3>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>First letter must be capital </b> </p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="special" class="invalid">A <b>one special character</b></p>
+            <p id="space" class="valid"> the <b> password does not contain a space</b></p>
+            <p id="length" class="invalid">Equal <b>8 characters</b></p>
+        </div>
+
+
+        <script>
+            var myInput = document.getElementById("psw");
+            var letter = document.getElementById("letter");
+            var capital = document.getElementById("capital");
+            var number = document.getElementById("number");
+            var length = document.getElementById("length");
+            var special = document.getElementById("special");
+            var space = document.getElementById("space");
+
+
+
+            // When the user clicks on the password field, show the message box
+            myInput.onfocus = function() {
+                document.getElementById("message").style.display = "block";
+            }
+
+            // When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function() {
+                document.getElementById("message").style.display = "none";
+            }
+
+            // When the user starts to type something inside the password field
+            myInput.onkeyup = function() {
+                // Validate lowercase letters
+                var lowerCaseLetters = /[a-z]/g;
+                if (myInput.value.match(lowerCaseLetters)) {
+                    letter.classList.remove("invalid");
+                    letter.classList.add("valid");
+                } else {
+                    letter.classList.remove("valid");
+                    letter.classList.add("invalid");
+                }
+
+                // Validate capital letters
+                var upperCaseLetters = /[A-Z]/g;
+                if (myInput.value[0].match(upperCaseLetters)) {
+                    capital.classList.remove("invalid");
+                    capital.classList.add("valid");
+                } else {
+                    capital.classList.remove("valid");
+                    capital.classList.add("invalid");
+                }
+
+
+
+                // Validate numbers
+                var numbers = /[0-9]/g;
+                if (myInput.value.match(numbers)) {
+                    number.classList.remove("invalid");
+                    number.classList.add("valid");
+                } else {
+                    number.classList.remove("valid");
+                    number.classList.add("invalid");
+                }
+                ////////////////////////////////////////
+
+                if (myInput.value.match(/[!\@\#\$\%\^\&\*\(\)\_\-\=\?\>\<\.\,]/)) {
+                    special.classList.remove("invalid");
+                    special.classList.add("valid");
+                } else {
+                    special.classList.remove("valid");
+                    special.classList.add("invalid");
+                }
+
+
+
+
+                // var space = /[" "]/g;
+                if (myInput.value.match(" ")) {
+                    space.classList.remove("valid");
+                    space.classList.add("invalid");
+
+
+                } else {
+
+                    space.classList.remove("invalid");
+                    space.classList.add("valid");
+                }
+
+
+                // Validate length
+
+                if (myInput.value.length != 8) {
+                    length.classList.remove("valid");
+                    length.classList.add("invalid");
+                } else {
+
+                    length.classList.remove("invalid");
+                    length.classList.add("valid");
+                }
+            }
+        </script>
+
+    </div>
+   <script src="sc.js"></script>
+</body>
+
+</html>

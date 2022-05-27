@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Cafe</title>
+    <link rel="icon" type="image/x-icon" href="hotcoffes.jpg">
+    <link rel="stylesheet" href="findastore.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" type="image/x-icon" href="hotcoffes.jpg">
+
+</head>
+<body>
+   
+
+        <header style="background-color:black ; color:rgb(255, 73, 7);">
+            <nav class="navbar" >
+        
+                    
+                <a class="active" href="coffe.html">home</a>
+                <a href="men.html">Menu</a>
+                <a href="findastore.html#s">Social</a>
+                <a href="findastore.html#f">FindAStore</a>
+                <a href="findastore.html#aus">AboutUs</a>
+                <a href="for.html">SignIn</a>
+                <a href="findastore.html#c">ContactUS</a>
+                <a href="more.html">More</a>
+                    
+            </nav>
+        <br>
+             <div class="icons">
+                <i class="fas fa-bars" id="menu-bars" style="position:fixe;top:15%; left:86%;" ></i>
+                <i class="fas fa-search" id="search-icon" style="position:fixe;top:15%; left:83%;"></i>
+
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a>
+
+            </div> 
+         
+        </header>
+
+
+
+
+
+         <section class="Aboutus" id="aus" >
+             <a name="aus">
+            <i>weareoldcafebuiltin1990 <br>
+            and what made our name still untill <br>
+            now our love for coffee 
+            </i></a>
+        </section>
+        <section id="s" class="social" >
+            <a name="social" >
+            <a href="https://www.facebook.com" class="fa fa-facebook" style="color: #3b5998" ></a>
+            <a href="https://www.twitter.com" class="fa fa-twitter" style="color:#00acee;" ></a>
+            <a href="https://www.google.com" class="fa fa-google" style="color: rgba(214, 14, 214, 0.534);" ></a>
+            <a href="https://www.youtube.com" class="fa fa-youtube" style="color: rgb(194, 32, 32)"></a>
+            </a>
+        </section>
+       <section class="fs" id="f" >
+        <a name="findstore">
+            <iframe width="425" height="350" frameborder="0"
+            scrolling="no" marginheight="0" marginwidth="0"
+            src="https://maps.google.com/maps?
+            f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;
+            q=1685+Centennial+Way+Corona+California+Riverside+County+92882&amp;
+            aq=&amp;sll=37.0625,-95.677068&amp;sspn=53.87374,114.082031&amp;
+            ie=UTF8&amp;hq=&amp;hnear=1685+Centennial+Way,+Corona,+Riverside,+California+92882&amp;
+            t=m&amp;z=14&amp;ll=33.858119,-117.598538&amp;output=embed">
+            </iframe>
+            <p style="font-family: cursive ">here our 
+                <br>modest cafe <br>
+                and we will be<br>
+                happy if we see <br>
+                you our <br>dear customer
+                <br>and we promise<br>
+                you your <br>
+                peace is our <br>aim
+            </p>
+        </a>
+        </section>
+       <section class="cs" id="c" >
+        <a name="contactus">
+            <img src="contact.jpg">
+            <p> contact Us</p>
+            
+            <textarea placeholder="Your Qusetion"></textarea> 
+             <input type="text" placeholder="FirstName">
+            <input type="text" placeholder="Last Name" style="position: absolute ;top: 25% ; left: 70rem;"> 
+            <input type="text" placeholder="County" style="position: absolute ;top: 40% ; left: 40.5rem;">
+            <input type="text" placeholder="Email address" style="position: absolute ;top: 40% ; left: 70rem;">
+            <input type="text" placeholder="Subject" style="position: absolute ;top: 53% ; left: 40.5rem;width: 53%;height:10%">
+          <center> <a href="mailto:AntoniousEmad75@gmail.com"> <input type="button" value="Send"  style="position: absolute ;top: 90% ; left: 60rem;" id="b"></center>
+           </a></a>
+        </section>
+    </div>
+    <script>
+        let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () =>{
+menu.classList.toggle('fa-times');
+navbar.classList.toggle('active');
+}
+
+let section = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header .navbar a');
+
+window.onscroll = () =>{
+
+menu.classList.remove('fa-times');
+navbar.classList.remove('active');
+
+section.forEach(sec =>{
+
+let top = window.scrollY;
+let height = sec.offsetHeight;
+let offset = sec.offsetTop - 150;
+let id = sec.getAttribute('id');
+
+if(top >= offset && top < offset + height){
+navLinks.forEach(links =>{
+  links.classList.remove('active');
+  document.querySelector('header .navbar a[href*='+id+']').classList.add('active');
+});
+};
+
+});
+
+}
+
+document.querySelector('#search-icon').onclick = () =>{
+document.querySelector('#search-form').classList.toggle('active');
+}
+
+document.querySelector('#close').onclick = () =>{
+document.querySelector('#search-form').classList.remove('active');
+}
+
+var swiper = new Swiper(".home-slider", {
+spaceBetween: 30,
+centeredSlides: true,
+autoplay: {
+delay: 7500,
+disableOnInteraction: false,
+},
+pagination: {
+el: ".swiper-pagination",
+clickable: true,
+},
+loop:true,
+});
+
+var swiper = new Swiper(".review-slider", {
+spaceBetween: 20,
+centeredSlides: true,
+autoplay: {
+delay: 7500,
+disableOnInteraction: false,
+},
+loop:true,
+breakpoints: {
+0: {
+  slidesPerView: 1,
+},
+640: {
+slidesPerView: 2,
+},
+768: {
+slidesPerView: 2,
+},
+1024: {
+slidesPerView: 3,
+},
+},
+});
+
+function loader(){
+document.querySelector('.loader-container').classList.add('fade-out');
+}
+
+function fadeOut(){
+setInterval(loader, 3000);
+}
+
+window.onload = fadeOut;
+    </script>
+</body>
+</html>

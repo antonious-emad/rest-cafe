@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Cafe</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="coffe.css">
+    <link rel="stylesheet" href="more.css">
+    <link rel="icon" type="image/x-icon" href="hotcoffes.jpg">
+
+    <link rel="icon" type="image/x-icon" href="hotcoffes.jpg">
+
+</head>
+<body>
+  
+    <header style="background-color:black ; color:rgb(255, 73, 7);">
+        <nav class="navbar" >
+    
+                
+            <a class="active" href="coffe.html">home</a>
+            <a href="men.html">Menu</a>
+            <a href="findastore.html#s">Social</a>
+            <a href="findastore.html#f">FindAStore</a>
+            <a href="findastore.html#aus">AboutUs</a>
+            <a href="for.html">SignIn</a>
+            <a href="findastore.html#c">ContactUS</a>
+            <a href="more.html">More</a>
+                
+        </nav>
+    <br>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+        </div>
+     
+    </header>
+
+
+
+
+
+
+    
+      <table style="color:white ; margin-left:15%;border: 2px solid rgba(248, 106, 4, 0.205); font-size: 2.5rem;height: 25%; text-align: center;border-radius: 35% 15%;position: absolute;top:10%;left: 20%;margin-bottom: 50%;">
+            <caption style="text-align: center;">our timetable</caption>
+             <tr>
+                <td>from</td>
+                <td> to</td>
+            </tr>
+            <tr>
+                <td>Monday-Friday</td>
+                <td>12:00Am-10:00Pm</td>
+            </tr>
+            <tr>
+                <td>Saturday-Sunday</td>
+                <td>ourHoliday</td>
+            </tr>
+        </table>
+        
+    <br style="display:block ; margin-bottom:20%">
+   
+
+    <br>
+    
+    <br>
+    <table style="border-spacing: 25px;" id="review"><tr><footer class="review" id="review">
+       <td> <div>
+            <img src="images/pic-1.png " style="display: inline;border-radius: 50%; float: left; margin-right: 0;margin-top:-170px;" width="200rem" height="200rem" ></img>
+            <p style="margin-top: -170px;margin-left: 13rem;padding-bottom: 50px;">Anton pavard</p>
+
+            <br>
+            <i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque porro quam doloremque illo, eveniet illum. Magnam dolore officiis voluptas veritatis nemo possimus assumenda error est natus? Quis, saepe iste. Perspiciatis.</i>
+        </div></td>
+       <td> <div>
+            <img src="images/pic-2.png" style="display: inline;border-radius: 50%; float: left; margin-right: 0;margin-top:-140px;" width="200rem" height="200rem" ></img>
+            <p style="margin-top: -160px;margin-left: 12rem;padding-bottom: 60px;">Biellie sillon</p>
+         
+            <br>
+            <i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque porro quam doloremque illo, eveniet illum. Magnam dolore officiis voluptas veritatis nemo possimus assumenda error est natus? Quis, saepe iste. Perspiciatis.</i>
+        </div></td>
+       <td> <div>
+            <img src="images/pic-3.png " style="display: inline;border-radius: 50%; float: left; margin-right: 0;margin-top:-160px;" width="200rem" height="200rem" ></img>
+            <p style="margin-top: -170px;margin-left:11rem;padding-bottom: 50px;">Michael Boles</p>
+
+            
+            <br>
+            <i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque porro quam doloremque illo, eveniet illum. Magnam dolore officiis voluptas veritatis nemo possimus assumenda error est natus? Quis, saepe iste. Perspiciatis.</i>
+        </div></td>
+       <td> <div>
+            <img src="images/pic-4.png " style="display: inline;border-radius: 50%; float: left; margin-right: 0;margin-top:-160px;" width="200rem" height="200rem" ></img>
+            <p style="margin-top: -170px;margin-left: 10rem;padding-bottom: 50px;">Natasha Ronald</p>
+
+           
+            <br>
+            <i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque porro quam doloremque illo, eveniet illum. Magnam dolore officiis voluptas veritatis nemo possimus assumenda error est natus? Quis, saepe iste. Perspiciatis.</i>
+        </div></td>
+    </footer></tr></table>
+    <script>
+        let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () =>{
+menu.classList.toggle('fa-times');
+navbar.classList.toggle('active');
+}
+
+let section = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header .navbar a');
+
+window.onscroll = () =>{
+
+menu.classList.remove('fa-times');
+navbar.classList.remove('active');
+
+section.forEach(sec =>{
+
+let top = window.scrollY;
+let height = sec.offsetHeight;
+let offset = sec.offsetTop - 150;
+let id = sec.getAttribute('id');
+
+if(top >= offset && top < offset + height){
+navLinks.forEach(links =>{
+  links.classList.remove('active');
+  document.querySelector('header .navbar a[href*='+id+']').classList.add('active');
+});
+};
+
+});
+
+}
+
+document.querySelector('#search-icon').onclick = () =>{
+document.querySelector('#search-form').classList.toggle('active');
+}
+
+document.querySelector('#close').onclick = () =>{
+document.querySelector('#search-form').classList.remove('active');
+}
+
+var swiper = new Swiper(".home-slider", {
+spaceBetween: 30,
+centeredSlides: true,
+autoplay: {
+delay: 7500,
+disableOnInteraction: false,
+},
+pagination: {
+el: ".swiper-pagination",
+clickable: true,
+},
+loop:true,
+});
+
+var swiper = new Swiper(".review-slider", {
+spaceBetween: 20,
+centeredSlides: true,
+autoplay: {
+delay: 7500,
+disableOnInteraction: false,
+},
+loop:true,
+breakpoints: {
+0: {
+  slidesPerView: 1,
+},
+640: {
+slidesPerView: 2,
+},
+768: {
+slidesPerView: 2,
+},
+1024: {
+slidesPerView: 3,
+},
+},
+});
+
+function loader(){
+document.querySelector('.loader-container').classList.add('fade-out');
+}
+
+function fadeOut(){
+setInterval(loader, 3000);
+}
+
+window.onload = fadeOut;
+    </script>
+</body>

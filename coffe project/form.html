@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Cafe</title>
+    <!-- <link rel="stylesheet" href="coffe.css"> -->
+
+    <style>
+body{
+    background-image: url(sig.jpg);
+    background-repeat: no-repeat;
+   background-size: cover;
+    width:10rem;
+    height:54rem;
+    font-family: cursive;
+    position: relative;
+    background-color: black;
+}
+
+div:not(p){
+    padding-left: 50px;
+    position: absolute;
+    top:0%;
+    left:35vw;
+    right: 40vw;
+    bottom: 0%;
+   /* background-color:rgba(132, 134, 135, 0.578);*/
+   background-color: rgba(0, 0, 0, 0.538);
+    font-family: cursive;
+    color: white;
+    width: fit-content;
+    height:fit-content;
+    border-radius: 20px;
+    object-fit: cover;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    left:40%;
+}
+input,button,select,input:hover{
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.538);
+    border-radius:9999px ;
+     border: 1px solid rgba(255, 255, 255, 0.481);
+    width: 200px;
+    height: 60px;
+    text-align: left;
+    color: white;
+    font-weight: 700;
+    padding-left:20px;
+    
+    
+}
+
+input:focus{
+    outline:rgba(255, 255, 255, 0.481) solid 0px;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+a{
+    text-decoration: none;
+   
+}
+form{
+    height: 100vh;
+}
+@media(max-width:450px) {
+    body{
+    background-image: url(sig.jpg);
+    background-repeat: no-repeat;
+   background-size: cover;
+    width:10rem;
+    height:54rem;
+    font-family: cursive;
+    position: relative;
+}
+
+div:not(p){
+    padding-left: 50px;
+    position: absolute;
+    top:0%;
+    left:0vw;
+    right: 40vw;
+    bottom: 0%;
+   /* background-color:rgba(132, 134, 135, 0.578);*/
+   background-color: rgba(0, 0, 0, 0.538);
+    font-family: cursive;
+    color: white;
+    width: fit-content;
+    height:fit-content;
+    border-radius: 20px;
+    object-fit: cover;
+}
+}
+
+    </style>
+        <link rel="icon" type="image/x-icon" href="hotcoffes.jpg">
+
+</head>
+<body>
+    <div class="fo" >
+        <form action="form.php" target="_blank" onsubmit="window.location.href = 'coffe.html';" method="get">
+        <!-- <img src="hotcoffes.jpg" width="40px" height="40px"  style="border-radius: 50%; position: absolute;top:2vw;left:45%;  ;">  -->
+        <!-- <p style="text-align: center; font-size: 1.55rem; padding-top: 30px;font-weight: 900; color: #eee; margin-left: 120px;">Login</p> -->
+        <p style="text-align: center;font-size: 1.75rem;color:#eee; margin-left: 85px;margin-top: -90px;margin-bottom: 10px ;background-color: rgba(210, 105, 30, 0.481); border-radius: 50% 5%;width: max-content; height: max-content;">CallCafe</p>
+
+        <select style="width: 224px;margin-top: 15px ;height: 64px;border-radius: 9999px; border-color: inherit;    background-color: rgba(0, 0, 0, 0.5);color: rgba(255, 255, 255, 0.481); padding: 20px;
+        " >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+
+        </select>
+        <input type="text" vlaue="FirstName"  placeholder="First Name" required>
+        <input type="text" vlaue="LastName"  placeholder="Last Name" required >
+        <input type="email" vlaue="email"  placeholder="email address" required > 
+        <input type="text" placeholder="password" id="password"pattern="[A-Z]{1}(?=.*[a-z A-Z 0-9 !@#$%^&*]).{7}"title="start by capital letter  containing special character and number " required>
+        <input type="tel"  placeholder="phone number" pattern="[0-9]{11}" required>
+        <input type="text" placeholder="Address"  required>
+        <br>
+        <br>
+        <br>
+        <br>
+       <input type="submit" onclick="check()"  value="Login"style=" width: 224px;
+        height: 64px;
+        text-align:center;
+        position:absolute;
+        bottom:3%;
+         color: rgba(255, 255, 255, 0.281);
+         font-size: 2.5rem;cursor: pointer;
+         "  >
+        </form>
+    </div>
+    <script>
+       /* function check(){
+    var password=document.getElementById("password").value;
+    var phone=document.getElementById("phone").value;
+
+if(phone == ""){
+   alert("fill the phone");  
+return false;
+}
+
+
+
+if (!phone.match(/^[0-1]{2}[0-9]{9}$/)){
+   alert("only 11 number 01xxxxxxxxx");
+//    document.getElementById("message00").innerHTML = "**telephone must be 11 number only!";
+       return false;
+   }
+if(password == ""){
+//    document.getElementById("message1").innerHTML = "**Fill the password";
+alert("fill the password");  
+
+return false;
+}
+if(password.charAt(0) !=password.charAt(0).toUpperCase()){
+alert(" password not start with uppercase letter");
+return false;
+}
+
+if (!password.match(/^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9])(?!.*\s).{8}$/)){
+  alert("password must include 8 characters only, one special character at last, include one digit and no space ") ;
+  return false;
+}
+
+
+}*/
+/*
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+var space = document.getElementById("space");
+var space = document.getElementById("character");
+
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value[0].match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }// Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(myInput.value.length <= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+
+// validate space
+  if(myinput.value.match(" ")){
+    space.classList.remove("valid");
+    space.classList.add("invalid");
+  }else{
+    space.classList.remove("invalid");
+    space.classList.add("valid");
+  }
+  
+  
+}*/
+    </script>
+</body>
+</html>
